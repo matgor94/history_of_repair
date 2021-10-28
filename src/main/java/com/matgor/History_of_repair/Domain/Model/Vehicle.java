@@ -1,4 +1,4 @@
-package com.matgor.History_of_repair.Domain.model;
+package com.matgor.History_of_repair.Domain.Model;
 
 import lombok.*;
 

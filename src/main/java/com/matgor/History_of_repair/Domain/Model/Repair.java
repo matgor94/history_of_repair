@@ -1,4 +1,4 @@
-package com.matgor.History_of_repair.Domain.model;
+package com.matgor.History_of_repair.Domain.Model;
 
 import lombok.*;
 
@@ -25,7 +25,7 @@ public class Repair {
 
     @NotBlank @NotNull
     private int partsCost;
-    
+
     @NotBlank @NotNull
     private int jobCost;
 }
