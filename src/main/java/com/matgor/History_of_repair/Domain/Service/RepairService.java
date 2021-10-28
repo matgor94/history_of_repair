@@ -44,7 +44,7 @@ public class RepairService {
         editedRepair.setDesctription(desctription);
         editedRepair.setJobCost(jobCost);
         editedRepair.setPartsCost(partsCost);
-        return repairRepository.save(editedRepair); 
+        return repairRepository.save(editedRepair);
     }
 
     public void deleteRepair(Repair repair){

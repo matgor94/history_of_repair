@@ -24,12 +24,7 @@ public class Vehicle {
     @NotNull @NotBlank
     private String model;
 
-    @NotNull @NotBlank
-    private int yearOfProduction;
-
-    @NotNull @NotBlank
-    private int km;
-
-    @NotNull @NotBlank
-    private int capacity;
+    private Integer yearOfProduction;
+    private Integer km;
+    private Integer capacity;
 }
