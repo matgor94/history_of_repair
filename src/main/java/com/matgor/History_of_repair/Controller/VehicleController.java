@@ -24,12 +24,27 @@ public class VehicleController {
         model.addAttribute("vehicle",  new Vehicle());
         return "vehicle/addForm";
     }
+
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String processAddVehicle(@Valid Vehicle vehicle, BindingResult bindingResult){
+    public String processAddVehicle(@Valid Vehicle vehicle, Model model, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "vehicle/addForm";
         }
         vehicleService.addVehicle(vehicle);
-        return "redirect:/vehicle/info";
+        model.addAttribute("vehciel", vehicle);
+        return "vehicle/info";
+    }
+    @RequestMapping(value = "/edit", method = RequestMethod.GET)
+    public String prepareEditVehicle(Long id, Model model){
+        model.addAttribute("vehciel", vehicleService.getVehicle(id));
+        return "vehicle/editForm";
+    }
+
+    public String processEditVehicle(@Valid Vehicle vehicle, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "vehicle/editForm";
+        }
+        vehicleService.addVehicle(vehicle);
+        return "redirect:/info";
     }
 }
