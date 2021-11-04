@@ -49,4 +49,7 @@ public class VehicleController {
         vehicleService.addVehicle(vehicle);
         return "vehicle/info";
     }
+
+
+
 }
