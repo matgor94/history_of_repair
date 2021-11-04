@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: mateusz
-  Date: 03.11.2021
-  Time: 17:46
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -17,5 +11,6 @@
     Rok produkcji: ${vehicle.yearOfProduction}<br/>
     Przebieg:${vehicle.km}<br/>
     Pojemność silnika: ${vehicle.capacity}<br/>
+<a href="/vehicle/edit?id=${vehicle.id}" role="button">Edytuj pojazd</a>
 </body>
 </html>

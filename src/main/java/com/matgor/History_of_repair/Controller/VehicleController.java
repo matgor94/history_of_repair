@@ -34,17 +34,19 @@ public class VehicleController {
         model.addAttribute("vehciel", vehicle);
         return "vehicle/info";
     }
+
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
     public String prepareEditVehicle(Long id, Model model){
-        model.addAttribute("vehciel", vehicleService.getVehicle(id));
+        model.addAttribute("vehicle", vehicleService.getVehicle(id));
         return "vehicle/editForm";
     }
 
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
     public String processEditVehicle(@Valid Vehicle vehicle, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "vehicle/editForm";
         }
         vehicleService.addVehicle(vehicle);
-        return "redirect:/info";
+        return "vehicle/info";
     }
 }
