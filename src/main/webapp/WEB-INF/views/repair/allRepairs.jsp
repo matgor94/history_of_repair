@@ -21,7 +21,7 @@
             <td>${repair.jobCost}</td>
         </tr>
     </c:forEach>
+    <a href="/repair/edit?id=${repair.id}" role="button">Edytuj naprawę</a>
 </table>
-
 </body>
 </html>
