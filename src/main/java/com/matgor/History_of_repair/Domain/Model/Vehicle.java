@@ -30,7 +30,6 @@ public class Vehicle {
     private Integer km;
     private Integer capacity;
 
-    @Column(name = "repairs")
     @OneToMany(mappedBy = "vehicle")
     private List<Repair> repairs = new ArrayList<>();
 }

@@ -40,7 +40,7 @@ public class DataSetUp {
             Repair olejSilnikowy = new Repair(null, "Olej silnikowy -  Valvoline Max Life 5W40", 150, 60, laguna);
             repairRepository.save(olejSilnikowy);
             Repair rozrzad = new Repair(null, "Rozrzad - DAYCO", 500, 300, honda);
-
+            repairRepository.save(rozrzad);
 
             hondaRepairs.add(klockiTyl);
             hondaRepairs.add(olejSilnikowy);

@@ -2,7 +2,6 @@ package com.matgor.History_of_repair.Domain.Service;
 
 import com.matgor.History_of_repair.Domain.Model.Repair;
 import com.matgor.History_of_repair.Domain.Repository.RepairRepository;
-import com.matgor.History_of_repair.Domain.Repository.VehicleRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -17,10 +16,8 @@ import java.util.Optional;
 @Transactional
 public class RepairService {
     private final RepairRepository repairRepository;
-    private final VehicleRepository vehicleRepository;
-    public RepairService(RepairRepository repairRepository, VehicleRepository vehicleRepository) {
+    public RepairService(RepairRepository repairRepository) {
         this.repairRepository = repairRepository;
-        this.vehicleRepository = vehicleRepository;
     }
 
     public Repair addRepair(Repair repair){

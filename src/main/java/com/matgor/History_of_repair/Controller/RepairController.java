@@ -1,6 +1,7 @@
 package com.matgor.History_of_repair.Controller;
 
 import com.matgor.History_of_repair.Domain.Model.Repair;
+import com.matgor.History_of_repair.Domain.Repository.RepairRepository;
 import com.matgor.History_of_repair.Domain.Service.RepairService;
 import com.matgor.History_of_repair.Domain.Service.VehicleService;
 import org.springframework.stereotype.Controller;
@@ -19,9 +20,11 @@ public class RepairController {
 
     private final RepairService repairService;
     private final VehicleService vehicleService;
-    public RepairController(RepairService repairService, VehicleService vehicleService) {
+    private final RepairRepository repairRepository;
+    public RepairController(RepairService repairService, VehicleService vehicleService, RepairRepository repairRepository) {
         this.repairService = repairService;
         this.vehicleService = vehicleService;
+        this.repairRepository = repairRepository;
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
