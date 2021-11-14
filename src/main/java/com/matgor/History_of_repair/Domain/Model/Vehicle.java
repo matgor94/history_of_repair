@@ -19,6 +19,7 @@ public class Vehicle {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @NotNull @NotBlank
     private String producent;
 
@@ -29,7 +30,8 @@ public class Vehicle {
     private Integer km;
     private Integer capacity;
 
-//    @OneToMany(mappedBy = "vehicle")
-//    private List<Repair> repairs = new ArrayList<>();
+    @Column(name = "repairs")
+    @OneToMany(mappedBy = "vehicle")
+    private List<Repair> repairs = new ArrayList<>();
 }
 

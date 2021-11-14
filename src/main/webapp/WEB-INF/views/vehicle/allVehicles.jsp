@@ -13,6 +13,7 @@
            <th>Model</th>
            <th>Rok produkcji</th>
            <th>Pojemność</th>
+           <th>Opcje</th>
        </tr>
        <c:forEach items="${allVehicles}" var="vehicle">
            <tr>
@@ -21,10 +22,14 @@
                <td>${vehicle.model}</td>
                <td>${vehicle.yearOfProduction}</td>
                <td>${vehicle.capacity}</td>
+               <td>
+                   <a href="/vehicle/edit?id=${vehicle.id}" role="button">Edytuj pojazd</a><br/>
+                   <a href="/repair/add?id=${vehicle.id}" role="button">Dodaj naprawę</a>
+                   <a href="/vehicleRepairs?id=${vehicle.id}" role="button">Historia</a>
+               </td>
            </tr>
        </c:forEach>
    </table>
-<a href="/vehicle/edit?id=${vehicle.id}" role="button">Edytuj pojazd</a><br/>
-<a href="/repair/add?id=${vehicle.id}" role="button">Dodaj naprawę</a>
+
 </body>
 </html>

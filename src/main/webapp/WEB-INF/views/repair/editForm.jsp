@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: mateusz
@@ -7,10 +8,16 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-  <head>
-    <title>$Title$</title>
-  </head>
-  <body>
-  $END$
-  </body>
+<head>
+    <title>Repair - Edit form</title>
+</head>
+<body>
+<form:form modelAttribute="repair" method="post">
+    <form:hidden path="id"/>
+    <form:input path="desctription" placeholder="Opis naprawy"/>
+    <form:input path="partsCost" placeholder="Koszt części"/>
+    <form:input path="jobCost" placeholder="Koszt robocizny"/>
+    <button type="submit">Zapisz naprawę</button>
+</form:form>
+</body>
 </html>

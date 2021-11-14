@@ -22,6 +22,6 @@ public class Repair {
     private int partsCost;
     private int jobCost;
 
-//    @ManyToOne
-//    private Vehicle vehicle;
+    @ManyToOne
+    private Vehicle vehicle;
 }

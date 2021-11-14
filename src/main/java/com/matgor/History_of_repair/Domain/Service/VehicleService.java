@@ -3,12 +3,11 @@ package com.matgor.History_of_repair.Domain.Service;
 import com.matgor.History_of_repair.Domain.Model.Vehicle;
 import com.matgor.History_of_repair.Domain.Repository.VehicleRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -30,16 +29,8 @@ public class VehicleService {
         return vehicleRepository.findById(id);
     }
 
-    @Modifying
-    @Query("UPDATE vehicles u set u.producent=?1, u.model=?2, u.yearOfProduction=?3, u.km=?4, u.capacity=?5 where u.id=?6")
-    public Vehicle editVehicle(String producent, String model, int yearOfProduction, int km, int capacity, Long id){
-       Vehicle editedVehicle =  vehicleRepository.getOne(id);
-       editedVehicle.setProducent(producent);
-       editedVehicle.setModel(model);
-       editedVehicle.setYearOfProduction(yearOfProduction);
-       editedVehicle.setKm(km);
-       editedVehicle.setCapacity(capacity);
-       return vehicleRepository.save(editedVehicle);
+    public List<Vehicle> allVehicles(){
+        return vehicleRepository.findAll();
     }
 
     public void deleteVehicle(Vehicle vehicle){

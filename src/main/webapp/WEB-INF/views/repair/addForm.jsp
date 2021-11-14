@@ -10,7 +10,7 @@
     <form:input path="desctription" placeholder="Opis naprawy"/>
     <form:input path="partsCost" placeholder="Koszt części"/>
     <form:input path="jobCost" placeholder="Koszt robocizny"/>
-<%--    <form:input path="car" placeholder="Pojazd"/>--%>
+    <form:hidden path="vehicle"/>
     <input type="submit" value="Dodaj naprawę">
 </form:form>
 </body>

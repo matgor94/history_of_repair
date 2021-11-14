@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("/vehicle")
@@ -26,13 +27,12 @@ public class VehicleController {
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public String processAddVehicle(@Valid Vehicle vehicle, Model model, BindingResult bindingResult){
+    public String processAddVehicle(@Valid Vehicle vehicle, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "vehicle/addForm";
         }
         vehicleService.addVehicle(vehicle);
-        model.addAttribute("vehciel", vehicle);
-        return "vehicle/info";
+        return "redirect:/vehicle/all";
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
@@ -47,7 +47,14 @@ public class VehicleController {
             return "vehicle/editForm";
         }
         vehicleService.addVehicle(vehicle);
-        return "vehicle/info";
+        return "redirect:/vehicle/all";
+    }
+
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
+    public String allVehicles(Model model){
+        List<Vehicle> allVehicles = vehicleService.allVehicles();
+        model.addAttribute("allVehicles", allVehicles);
+        return "vehicle/allVehicles";
     }
 
 

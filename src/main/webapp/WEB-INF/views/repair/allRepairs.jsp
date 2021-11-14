@@ -13,7 +13,7 @@
         <th>Koszt części</th>
         <th>Koszt robocizny</th>
     </tr>
-    <c:forEach items="${repairsOfCar}" var="repair">
+    <c:forEach items="${allRepairs}" var="repair">
         <tr>
             <td>${repair.id}</td>
             <td>${repair.desctription}</td>
@@ -21,7 +21,6 @@
             <td>${repair.jobCost}</td>
         </tr>
     </c:forEach>
-    <a href="/repair/edit?id=${repair.id}" role="button">Edytuj naprawę</a>
 </table>
 </body>
 </html>

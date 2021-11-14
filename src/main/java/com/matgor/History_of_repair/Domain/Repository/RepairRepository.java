@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface RepairRepository extends JpaRepository<Repair, Long> {
-    List<Repair> findAllById(Long id);
+    List<Repair> findAllByVehicle_Id(Long id);
 }
