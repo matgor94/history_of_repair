@@ -1,23 +1,35 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: mateusz
-  Date: 07.11.2021
-  Time: 18:26
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Repair - Edit form</title>
+    <title>Formularz edycji naprawy</title>
 </head>
 <body>
-<form:form modelAttribute="repair" method="post">
+<form:form method="post" modelAttribute="repair">
     <form:hidden path="id"/>
-    <form:input path="desctription" placeholder="Opis naprawy"/>
-    <form:input path="partsCost" placeholder="Koszt części"/>
-    <form:input path="jobCost" placeholder="Koszt robocizny"/>
-    <button type="submit">Zapisz naprawę</button>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Opis naprawy</label>
+        <div class="col-sm-10">
+            <form:textarea path="desctription" placeholder="Opis naprawy" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Koszt części</label>
+        <div class="col-sm-10">
+            <form:input path="partsCost" placeholder="Koszt części" class="form-control"/>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-sm-2 col-form-label">Koszt robocizny</label>
+        <div class="col-sm-10">
+            <form:input path="jobCost" placeholder="Koszt robocizny" class="form-control"/>
+        </div>
+    </div>
+    <form:hidden path="vehicle"/>
+    <div align="center">
+        <button type="submit" class="btn btn-dark">Dodaj naprawę</button>
+    </div>
+
 </form:form>
 </body>
 </html>

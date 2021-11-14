@@ -1,11 +1,11 @@
 package com.matgor.History_of_repair.Controller;
 
 import com.matgor.History_of_repair.Domain.Model.Repair;
+
 import com.matgor.History_of_repair.Domain.Service.RepairService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
@@ -18,8 +18,9 @@ public class VehicleRepairsController {
         this.repairService = repairService;
     }
 
+
     @RequestMapping(value = "/vehicleRepairs")
-    public String allVehicleRepairs(Model model, HttpServletRequest request){
+    public String allVehicleRepairsProcess(Model model, HttpServletRequest request){
         Long idVehicle = Long.parseLong(request.getParameter("id"));
         List<Repair> repairList = repairService.allRepairsByVehicle(idVehicle);
         model.addAttribute("repairs", repairList);
@@ -33,6 +34,7 @@ public class VehicleRepairsController {
         model.addAttribute("partsCost", costAllParts);
         model.addAttribute("jobsCost", costAllJobs);
         model.addAttribute("allCost", allRepairsCost);
+        model.addAttribute("id", idVehicle);
         return "vehicle/vehicleRepairs";
     }
 }
