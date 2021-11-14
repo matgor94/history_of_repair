@@ -28,7 +28,7 @@
                <td>${vehicle.capacity}</td>
                <td>
                    <a href="/vehicle/edit?id=${vehicle.id}" role="button" class="btn btn-primary btn-sm">Edytuj pojazd</a>
-                   <a href="/repair/add?id=${vehicle.id}" role="button" class="btn btn-secondary btn-sm">Dodaj naprawę</a>
+                   <a href="/repair/add?vehID=${vehicle.id}" role="button" class="btn btn-secondary btn-sm">Dodaj naprawę</a>
                    <a href="/vehicleRepairs?id=${vehicle.id}" role="button" class="btn btn-success btn-sm">Historia</a>
                </td>
            </tr>

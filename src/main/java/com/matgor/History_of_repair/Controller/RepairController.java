@@ -38,7 +38,7 @@ public class RepairController {
         if(bindingResult.hasErrors()){
             return "repair/addForm";
         }
-        Long id =Long.parseLong(request.getParameter("id"));
+        Long id =Long.parseLong(request.getParameter("vehID"));
         repair.setVehicle(vehicleService.getVehicle(id).orElseThrow());
         repairService.addRepair(repair);
         return "redirect:/repair/all";

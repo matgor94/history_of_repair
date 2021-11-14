@@ -43,10 +43,7 @@ public class DataSetUp {
             repairRepository.save(rozrzad);
 
             hondaRepairs.add(klockiTyl);
-            hondaRepairs.add(olejSilnikowy);
             hondaRepairs.add(rozrzad);
-
-            lagunaRepairs.add(klockiTyl);
             lagunaRepairs.add(olejSilnikowy);
 
 
